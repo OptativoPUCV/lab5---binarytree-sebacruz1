@@ -68,7 +68,7 @@ void insertTreeMap(TreeMap *tree, void *key, void *value)
     }
   }
   
-    
+
 }
 
 TreeNode *minimum(TreeNode *x) { return NULL; }
@@ -117,8 +117,8 @@ Pair *firstTreeMap(TreeMap *tree)
   /*
   if (tree->root == NULL) return NULL;
 
-  TreNode *node = tree-root
-  return NULL; */
+  TreNode *node = tree-root */ 
+  return NULL; 
 }
 
 Pair *nextTreeMap(TreeMap *tree) { return NULL; }

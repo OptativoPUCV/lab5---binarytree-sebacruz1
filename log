@@ -121,3 +121,28 @@ treemap.c:117:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 e496255
+Thu 20 Apr 2023 05:33:34 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:55:9: error: too few arguments to function ‘tree->lower_than’
+   55 |     if (tree->lower_than(tree->current->pair->key), key))
+      |         ^~~~
+treemap.c:55:51: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   55 |     if (tree->lower_than(tree->current->pair->key), key))
+      |                                                   ^
+treemap.c:55:57: error: expected statement before ‘)’ token
+   55 |     if (tree->lower_than(tree->current->pair->key), key))
+      |                                                         ^
+treemap.c:59:36: error: ‘new’ undeclared (first use in this function)
+   59 |         if (tree->current->right = new);
+      |                                    ^~~
+treemap.c:59:36: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c: In function ‘firstTreeMap’:
+treemap.c:117:1: error: control reaches end of non-void function [-Werror=return-type]
+  117 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+d17a554

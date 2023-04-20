@@ -109,10 +109,11 @@ Pair *upperBound(TreeMap *tree, void *key) { return NULL; }
 
 Pair *firstTreeMap(TreeMap *tree) 
 {
+  /*
   if (tree->root == NULL) return NULL;
 
   TreNode *node = tree-root
-  return NULL; 
+  return NULL; */
 }
 
 Pair *nextTreeMap(TreeMap *tree) { return NULL; }

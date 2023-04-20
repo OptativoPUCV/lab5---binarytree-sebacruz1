@@ -13,3 +13,9 @@ treemap.c:41:14: error: ‘null’ undeclared (first use in this function)
 treemap.c:41:14: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 77abb00
+Thu 20 Apr 2023 04:51:31 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|7
+total_score: 5/70
+7a86ddb

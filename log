@@ -277,3 +277,20 @@ Thu 20 Apr 2023 05:36:15 PM UTC:
  tests:  11|6
 total_score: 15/70
 743fe58
+Sat 22 Apr 2023 04:44:26 PM UTC: 
+ treemap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘firstTreeMap’:
+treemap.c:123:3: error: expected ‘,’ or ‘;’ before ‘return’
+  123 |   return node;
+      |   ^~~~~~
+treemap.c:122:13: error: unused variable ‘node’ [-Werror=unused-variable]
+  122 |   TreeNode *node = tree->root
+      |             ^~~~
+treemap.c:124:1: error: control reaches end of non-void function [-Werror=return-type]
+  124 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+ea4477e

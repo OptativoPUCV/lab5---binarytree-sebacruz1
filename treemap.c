@@ -120,7 +120,12 @@ Pair *firstTreeMap(TreeMap *tree)
   if (tree->root == NULL) return NULL;
 
   TreeNode *node = tree->root; 
-  return node->pair; 
+  while(node->left != NULL)
+  {
+    node = node->left;
+  }
+  tree->current = node;
+  return node->pair;
 }
 
 Pair *nextTreeMap(TreeMap *tree) { return NULL; }

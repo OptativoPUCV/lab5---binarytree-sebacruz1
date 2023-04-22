@@ -119,7 +119,7 @@ Pair *firstTreeMap(TreeMap *tree)
 {
   if (tree->root == NULL) return NULL;
 
-  TreeNode *node = tree->root  
+  TreeNode *node = tree->root; 
   return node; 
 }
 

@@ -78,12 +78,12 @@ void insertTreeMap(TreeMap *tree, void *key, void *value)
 
   new->parent = padre;
   
-  if(tree->lower_than(key, padre->pair->key ))
+  if (tree->lower_than(key, padre->pair->key ))
   {
     padre->left = new;
-    
   }
-  else{
+  else
+  {
     padre->right = new;
   }
 
@@ -106,7 +106,7 @@ TreeNode * minimum(TreeNode * x){
 
 TreeNode *minimum(TreeNode *x) 
 {
-  
+  return NULL; 
 }
 
 void removeNode(TreeMap *tree, TreeNode *node) {}

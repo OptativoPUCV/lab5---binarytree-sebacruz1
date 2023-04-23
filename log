@@ -350,3 +350,31 @@ treemap.c:95:12: error: ‘minimum’ defined but not used [-Werror=unused-funct
 cc1: all warnings being treated as errors
 Compilation failed
 9d32def
+Sun 23 Apr 2023 12:29:54 AM UTC: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:107:11: error: redefinition of ‘minimum’
+  107 | TreeNode *minimum(TreeNode *x)
+      |           ^~~~~~~
+treemap.c:95:12: note: previous definition of ‘minimum’ with type ‘TreeNode *(TreeNode *)’
+   95 | TreeNode * minimum(TreeNode * x){
+      |            ^~~~~~~
+test.c:503:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:606:1: error: expected declaration or statement at end of input
+  606 | }
+      | ^
+At top level:
+test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+In file included from test.c:4:
+treemap.c:95:12: error: ‘minimum’ defined but not used [-Werror=unused-function]
+   95 | TreeNode * minimum(TreeNode * x){
+      |            ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a142603

@@ -726,3 +726,9 @@ treemap.c:189:18: error: ‘sucessor’ undeclared (first use in this function);
 treemap.c:189:18: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 1929cbd
+Sun 23 Apr 2023 01:37:21 AM UTC: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  24|1
+total_score: 55/70
+c12ba31

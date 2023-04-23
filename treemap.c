@@ -186,10 +186,10 @@ void removeNode(TreeMap *tree, TreeNode *node)
     }
     
     Pair *temp_pair = node->pair;
-    node->pair = sucessor->pair;
-    sucessor->pair = temp_pair;
+    node->pair = sucesor->pair;
+    sucesor->pair = temp_pair;
     
-    removeNode(tree, sucessor);
+    removeNode(tree, sucesor);
   }
 }
 

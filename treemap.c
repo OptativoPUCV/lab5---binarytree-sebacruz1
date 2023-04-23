@@ -275,4 +275,25 @@ Pair *firstTreeMap(TreeMap *tree)
   return node->pair;
 }
 
-Pair *nextTreeMap(TreeMap *tree) { return NULL; }
+Pair * nextTreeMap(TreeMap * tree) {
+  TreeNode *siguiente;
+  TreeNode *padre;
+  
+  if(tree->current->right != NULL){
+    siguiente = minimum(tree->current->right);
+    tree->current = siguiente;
+    return siguiente->pair;
+    
+  }else{
+    
+    padre = tree->current->parent;
+    if(padre->parent == NULL) return NULL;
+    
+    while (tree->current->pair->key < padre->pair->key && padre->parent != NULL){
+      if(padre->parent == NULL && padre == tree->root) return tree->root->pair;
+      padre = padre->parent;
+    }
+    tree->current = padre;
+    return padre->pair;
+  }
+}

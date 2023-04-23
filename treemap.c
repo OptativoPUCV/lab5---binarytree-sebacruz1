@@ -101,56 +101,81 @@ TreeNode * minimum(TreeNode * x){
   return x;
 }
 
-void removeNode(TreeMap *tree, TreeNode *node) {
-  if (tree == NULL || node == NULL) return; // verificar si el árbol o el nodo son nulos
-
-  // encontrar el nodo que se desea eliminar
-  TreeNode *parent = NULL;
-  TreeNode *current = tree->root;
-
-  while (current != NULL && current != node) {
-    parent = current;
-    if (tree->lower_than(node->pair->key, current->pair->key)) {
-      current = current->left;
-    } else {
-      current = current->right;
-    }
+void removeNode(TreeMap *tree, TreeNode *node) 
+{
+  if (tree == NULL || node == NULL) {
+    // Si el árbol o el nodo son NULL, no se puede eliminar nada.
+    return;
   }
-
-  if (current == NULL) return; // el nodo no se encontró en el árbol
-
-  // el nodo tiene dos hijos
-  if (current->left != NULL && current->right != NULL) {
-    TreeNode *successor = current->right;
+  
+  TreeNode *parent = node->parent;
+  if (parent == NULL && node != tree->root) {
+    // Si el nodo no es la raíz y no tiene padre, es un nodo inválido.
+    return;
+  }
+  
+  if (node->left == NULL && node->right == NULL) {
+    // Si el nodo no tiene hijos, simplemente lo eliminamos.
+    if (parent != NULL) {
+      if (parent->left == node) {
+        parent->left = NULL;
+      } else {
+        parent->right = NULL;
+      }
+    } else {
+      // Si el nodo es la raíz del árbol, actualizamos la raíz.
+      tree->root = NULL;
+    }
+    
+    free(node->pair);
+    free(node);
+  } else if (node->left == NULL) {
+    // Si el nodo tiene un solo hijo a la derecha, lo reemplazamos con su hijo.
+    TreeNode *child = node->right;
+    if (parent != NULL) {
+      if (parent->left == node) {
+        parent->left = child;
+      } else {
+        parent->right = child;
+      }
+    } else {
+      // Si el nodo es la raíz del árbol, actualizamos la raíz.
+      tree->root = child;
+    }
+    
+    child->parent = parent;
+    free(node->pair);
+    free(node);
+  } else if (node->right == NULL) {
+    // Si el nodo tiene un solo hijo a la izquierda, lo reemplazamos con su hijo.
+    TreeNode *child = node->left;
+    if (parent != NULL) {
+      if (parent->left == node) {
+        parent->left = child;
+      } else {
+        parent->right = child;
+      }
+    } else {
+      // Si el nodo es la raíz del árbol, actualizamos la raíz.
+      tree->root = child;
+    }
+    
+    child->parent = parent;
+    free(node->pair);
+    free(node);
+  } else {
+    // Si el nodo tiene dos hijos, lo reemplazamos por su sucesor en orden.
+    TreeNode *successor = node->right;
     while (successor->left != NULL) {
       successor = successor->left;
     }
-    current->pair = successor->pair;
-    current = successor;
+    
+    Pair *temp_pair = node->pair;
+    node->pair = successor->pair;
+    successor->pair = temp_pair;
+    
+    removeNode(tree, successor);
   }
-
-  // el nodo tiene cero o un hijo
-  TreeNode *child = NULL;
-  if (current->left != NULL) {
-    child = current->left;
-  } else if (current->right != NULL) {
-    child = current->right;
-  }
-
-  // eliminar el nodo del árbol
-  if (parent == NULL) {
-    tree->root = child;
-  } else if (current == parent->left) {
-    parent->left = child;
-  } else {
-    parent->right = child;
-  }
-  
-  if (child != NULL) {
-    child->parent = parent;
-  }
-  
-  free(current);
 }
 
 

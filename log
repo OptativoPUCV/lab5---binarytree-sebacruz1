@@ -702,3 +702,15 @@ treemap.c:189:18: error: ‘successor’ undeclared (first use in this function)
 treemap.c:189:18: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 672ceb9
+Sun 23 Apr 2023 01:37:02 AM UTC: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:189:18: error: ‘sucessor’ undeclared (first use in this function); did you mean ‘succesor’?
+  189 |     node->pair = sucessor->pair;
+      |                  ^~~~~~~~
+      |                  succesor
+treemap.c:189:18: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+3eee53c

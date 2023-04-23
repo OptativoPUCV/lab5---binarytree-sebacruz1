@@ -117,6 +117,7 @@ void removeNode(TreeMap *tree, TreeNode *node)
     {
       tree->current->parent->left = tree->current->left;
       tree->current->parent->right = tree->current->right;
+      tree->current = NULL;
       return;
     }
     if (node->pair->key > tree->current->pair->key)
@@ -128,9 +129,6 @@ void removeNode(TreeMap *tree, TreeNode *node)
       tree->current = tree->current->left;
     }
   }
-  
-  
-    
 }
 
 void eraseTreeMap(TreeMap *tree, void *key) {

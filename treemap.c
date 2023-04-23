@@ -150,13 +150,10 @@ Pair *searchTreeMap(TreeMap *tree, void *key)
 
 Pair *upperBound(TreeMap *tree, void *key) 
 {
-  ree -> current = tree -> root;
+  tree->current = tree->root;
   TreeNode *ub_node = NULL;
   
-  
-  
   if(tree->root == NULL) return NULL;
-  
   
   while(tree->current != NULL)
   {

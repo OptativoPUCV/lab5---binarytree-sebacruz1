@@ -589,3 +589,29 @@ treemap.c:109:8: error: unused variable ‘buscado’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 a8c22a6
+Sun 23 Apr 2023 01:08:20 AM UTC: 
+ treemap.c | 19 ++++++++++---------
+ 1 file changed, 10 insertions(+), 9 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘eraseTreeMap’:
+treemap.c:113:3: error: implicit declaration of function ‘removeNode’; did you mean ‘remove’? [-Werror=implicit-function-declaration]
+  113 |   removeNode(tree, node);
+      |   ^~~~~~~~~~
+      |   remove
+treemap.c: At top level:
+treemap.c:141:6: error: conflicting types for ‘removeNode’; have ‘void(TreeMap *, TreeNode *)’ [-Werror]
+  141 | void removeNode(TreeMap *tree, TreeNode *node)
+      |      ^~~~~~~~~~
+treemap.c:113:3: note: previous implicit declaration of ‘removeNode’ with type ‘void(TreeMap *, TreeNode *)’
+  113 |   removeNode(tree, node);
+      |   ^~~~~~~~~~
+treemap.c: In function ‘removeNode’:
+treemap.c:146:18: error: invalid initializer
+  146 |   Pair buscado = searchTreeMap(tree, node->pair->key);
+      |                  ^~~~~~~~~~~~~
+treemap.c:146:8: error: unused variable ‘buscado’ [-Werror=unused-variable]
+  146 |   Pair buscado = searchTreeMap(tree, node->pair->key);
+      |        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+10d7f69

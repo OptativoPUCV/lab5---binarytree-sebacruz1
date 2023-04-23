@@ -137,11 +137,6 @@ void removeNode(TreeMap *tree, TreeNode *node)
     {
       tree->current = tree->current->left;
     }
-
-    if (tree->current->left && tree->current->right == NULL)
-    {
-      return;
-    }
     
   } 
 }

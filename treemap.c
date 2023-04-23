@@ -101,7 +101,7 @@ TreeNode * minimum(TreeNode * x){
   return x;
 }
 
-TreeNode * minimum(TreeNode * x)
+TreeNode * minmum(TreeNode * x)
 {
   while(x->left != NULL)
   {

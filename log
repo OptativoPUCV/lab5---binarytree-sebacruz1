@@ -418,3 +418,9 @@ treemap.c:94:12: note: previous definition of ‘minimum’ with type ‘TreeNod
       |            ^~~~~~~
 Compilation failed
 e2d3872
+Sun 23 Apr 2023 12:33:12 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  17|3
+total_score: 30/70
+ea0bf5b

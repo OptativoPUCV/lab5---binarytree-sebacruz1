@@ -499,3 +499,15 @@ Sun 23 Apr 2023 01:02:21 AM UTC:
  tests:  21|2
 total_score: 40/70
 0c48ac8
+Sun 23 Apr 2023 01:02:30 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+In function ‘removeNode’,
+    inlined from ‘removeNode’ at treemap.c:104:6:
+treemap.c:115:7: error: ‘free’ called on pointer ‘tree’ with nonzero offset 8 [-Werror=free-nonheap-object]
+  115 |       free(&tree->current);
+      |       ^~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b776809

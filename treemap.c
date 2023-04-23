@@ -177,6 +177,20 @@ void removeNode(TreeMap *tree, TreeNode *node)
     free(node->pair);
     free(node);
   } 
+  else 
+  {
+    TreeNode *succesor = node->right;
+    while (succesor->left != NULL) 
+    {
+      succesor = succesor->left;
+    }
+    
+    Pair *temp_pair = node->pair;
+    node->pair = successor->pair;
+    successor->pair = temp_pair;
+    
+    removeNode(tree, successor);
+  }
 }
 
 

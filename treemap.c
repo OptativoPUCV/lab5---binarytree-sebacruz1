@@ -179,10 +179,10 @@ void removeNode(TreeMap *tree, TreeNode *node)
   } 
   else 
   {
-    TreeNode *succesor = node->right;
-    while (succesor->left != NULL) 
+    TreeNode *sucesor = node->right;
+    while (sucesor->left != NULL) 
     {
-      succesor = succesor->left;
+      sucesor = sucesor->left;
     }
     
     Pair *temp_pair = node->pair;

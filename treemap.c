@@ -117,7 +117,7 @@ void removeNode(TreeMap *tree, TreeNode *node)
 
   tree->current = tree->root;
   
-   while (1)
+   while (tree->current->left && tree->current->right != NULL)
   {
     if (tree->current->pair == node->pair)
     {
@@ -131,6 +131,11 @@ void removeNode(TreeMap *tree, TreeNode *node)
     else 
     {
       tree->current = tree->current->left;
+    }
+
+    if (tree->current->left && tree->current->right == NULL)
+    {
+      return;
     }
     
   } 

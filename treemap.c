@@ -124,7 +124,7 @@ void removeNode(TreeMap *tree, TreeNode *node)
       tree->current = NULL;
       return;
     }
-    if (node->pair->key > tree->current->pair->key)
+    if (node->pair->value > tree->current->pair->value)
     {
       tree->current = tree->current->right;
     }

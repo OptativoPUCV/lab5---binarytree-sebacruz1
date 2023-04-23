@@ -112,7 +112,7 @@ void removeNode(TreeMap *tree, TreeNode *node)
     if (tree->current->pair->key == node->pair->key)
     {
       tree->current = NULL;
-      free(&tree->current);
+      free(tree->current);
       return;
     }
     if (node->pair->value > tree->current->pair->value)

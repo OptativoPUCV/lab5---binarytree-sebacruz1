@@ -511,3 +511,9 @@ treemap.c:115:7: error: ‘free’ called on pointer ‘tree’ with nonzero off
 cc1: all warnings being treated as errors
 Compilation failed
 b776809
+Sun 23 Apr 2023 01:02:41 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  21|2
+total_score: 40/70
+f2f075f

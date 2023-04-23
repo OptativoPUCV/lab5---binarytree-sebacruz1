@@ -106,25 +106,9 @@ void removeNode(TreeMap *tree, TreeNode *node)
   if (tree->root == NULL) return;
 
   tree->current = tree->root;
+  TreeNode buscado = searchTree(tree, node->key);
   
-   while (tree->current != NULL)
-  {
-    if (tree->current->pair->key == node->pair->key)
-    {
-      tree->current->pair = NULL;
-      free(tree->current->pair);
-      return;
-    }
-    if (node->pair->key > tree->current->pair->key)
-    {
-      tree->current = tree->current->right;
-    }
-    else 
-    {
-      tree->current = tree->current->left;
-    }
-    
-  } 
+   
 }
 
 void eraseTreeMap(TreeMap *tree, void *key) {

@@ -529,3 +529,21 @@ Sun 23 Apr 2023 01:03:25 AM UTC:
  tests:  21|2
 total_score: 40/70
 283ccdc
+Sun 23 Apr 2023 01:06:05 AM UTC: 
+ treemap.c | 18 +-----------------
+ 1 file changed, 1 insertion(+), 17 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:109:22: error: implicit declaration of function ‘searchTree’; did you mean ‘searchTreeMap’? [-Werror=implicit-function-declaration]
+  109 |   TreeNode buscado = searchTree(tree, node->key);
+      |                      ^~~~~~~~~~
+      |                      searchTreeMap
+treemap.c:109:43: error: ‘TreeNode’ has no member named ‘key’
+  109 |   TreeNode buscado = searchTree(tree, node->key);
+      |                                           ^~
+treemap.c:109:12: error: unused variable ‘buscado’ [-Werror=unused-variable]
+  109 |   TreeNode buscado = searchTree(tree, node->key);
+      |            ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c26c60e

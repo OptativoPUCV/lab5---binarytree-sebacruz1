@@ -406,3 +406,15 @@ treemap.c:95:12: error: ‘minimum’ defined but not used [-Werror=unused-funct
 cc1: all warnings being treated as errors
 Compilation failed
 643e325
+Sun 23 Apr 2023 12:32:52 AM UTC: 
+ treemap.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:4:
+treemap.c:104:12: error: redefinition of ‘minimum’
+  104 | TreeNode * minimum(TreeNode * x)
+      |            ^~~~~~~
+treemap.c:94:12: note: previous definition of ‘minimum’ with type ‘TreeNode *(TreeNode *)’
+   94 | TreeNode * minimum(TreeNode * x){
+      |            ^~~~~~~
+Compilation failed
+e2d3872

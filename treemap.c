@@ -103,42 +103,50 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap *tree, TreeNode *node) 
 {
-  if (tree == NULL || node == NULL) {
-    // Si el árbol o el nodo son NULL, no se puede eliminar nada.
-    return;
-  }
+  if (tree == NULL || node == NULL) return;
   
   TreeNode *parent = node->parent;
-  if (parent == NULL && node != tree->root) {
-    // Si el nodo no es la raíz y no tiene padre, es un nodo inválido.
-    return;
-  }
   
-  if (node->left == NULL && node->right == NULL) {
-    // Si el nodo no tiene hijos, simplemente lo eliminamos.
-    if (parent != NULL) {
-      if (parent->left == node) {
+  if (parent == NULL && node != tree->root) return;
+  
+  if (node->left == NULL && node->right == NULL) 
+  {
+    if (parent != NULL) 
+    {
+      if (parent->left == node) 
+      {
         parent->left = NULL;
-      } else {
+      }
+      else 
+      {
         parent->right = NULL;
       }
-    } else {
-      // Si el nodo es la raíz del árbol, actualizamos la raíz.
+    } 
+    else 
+    {
       tree->root = NULL;
     }
     
     free(node->pair);
     free(node);
-  } else if (node->left == NULL) {
-    // Si el nodo tiene un solo hijo a la derecha, lo reemplazamos con su hijo.
+    
+  } 
+  else if (node->left == NULL) 
+  {
     TreeNode *child = node->right;
-    if (parent != NULL) {
-      if (parent->left == node) {
+    if (parent != NULL) 
+    {
+      if (parent->left == node) 
+      {
         parent->left = child;
-      } else {
+      } 
+      else 
+      {
         parent->right = child;
       }
-    } else {
+    } 
+    else 
+    {
       // Si el nodo es la raíz del árbol, actualizamos la raíz.
       tree->root = child;
     }

@@ -106,7 +106,7 @@ void removeNode(TreeMap *tree, TreeNode *node)
   if (tree->root == NULL) return;
 
   tree->current = tree->root;
-  TreeNode buscado = searchTree(tree, node->key);
+  TreeNode buscado = searchTreeMap(tree, node->key);
   
    
 }

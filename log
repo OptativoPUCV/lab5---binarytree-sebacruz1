@@ -547,3 +547,17 @@ treemap.c:109:12: error: unused variable ‘buscado’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 c26c60e
+Sun 23 Apr 2023 01:06:13 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:109:46: error: ‘TreeNode’ has no member named ‘key’
+  109 |   TreeNode buscado = searchTreeMap(tree, node->key);
+      |                                              ^~
+treemap.c:109:12: error: unused variable ‘buscado’ [-Werror=unused-variable]
+  109 |   TreeNode buscado = searchTreeMap(tree, node->key);
+      |            ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+17220bd

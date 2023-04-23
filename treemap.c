@@ -147,43 +147,36 @@ void removeNode(TreeMap *tree, TreeNode *node)
     } 
     else 
     {
-      // Si el nodo es la raíz del árbol, actualizamos la raíz.
       tree->root = child;
     }
     
     child->parent = parent;
     free(node->pair);
     free(node);
-  } else if (node->right == NULL) {
-    // Si el nodo tiene un solo hijo a la izquierda, lo reemplazamos con su hijo.
+  } 
+  else if (node->right == NULL) 
+  {
     TreeNode *child = node->left;
-    if (parent != NULL) {
-      if (parent->left == node) {
+    if (parent != NULL) 
+    {
+      if (parent->left == node) 
+      {
         parent->left = child;
-      } else {
+      } 
+      else
+      {
         parent->right = child;
       }
-    } else {
-      // Si el nodo es la raíz del árbol, actualizamos la raíz.
+    } 
+    else
+    {
       tree->root = child;
     }
     
     child->parent = parent;
     free(node->pair);
     free(node);
-  } else {
-    // Si el nodo tiene dos hijos, lo reemplazamos por su sucesor en orden.
-    TreeNode *successor = node->right;
-    while (successor->left != NULL) {
-      successor = successor->left;
-    }
-    
-    Pair *temp_pair = node->pair;
-    node->pair = successor->pair;
-    successor->pair = temp_pair;
-    
-    removeNode(tree, successor);
-  }
+  } 
 }
 
 
